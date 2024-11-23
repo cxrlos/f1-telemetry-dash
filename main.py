@@ -30,7 +30,7 @@ app.layout = html.Div([
     
     dcc.Graph(
         id='brake-telemetry',
-        style={'height': '70vh'}
+        style={ 'height': '70vh' }
     ),
     
     html.Div([
@@ -59,8 +59,11 @@ def update_graph(n):
         labels={
             'date': 'Time',
             'brake': 'Brake Application (%)'
-        }
+        },
+        line_shape='linear'
     )
+    
+    fig.update_traces(line=dict(color='#FF8700'))
     
     fig.update_layout(
         xaxis_title='Time',
